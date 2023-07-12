@@ -1,0 +1,8 @@
+target/
+.idea
+node_modules
+.log
+.DS_Store
+.vscode
+build
+devel

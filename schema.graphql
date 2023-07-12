@@ -1,0 +1,21 @@
+type Transfer @entity {
+  id: ID!
+  sender: Bytes!
+  receiver: Bytes!
+  amount: BigInt!
+  timestamp: BigInt!
+  tx_hash: Bytes!
+  block_number: BigInt!
+  log_index: BigInt!
+}
+
+type Approval @entity {
+  id: ID!
+  owner: Bytes!
+  spender: Bytes!
+  value: BigInt!
+  timestamp: BigInt!
+  tx_hash: Bytes!
+  block_number: BigInt!
+  log_index: BigInt!
+}
