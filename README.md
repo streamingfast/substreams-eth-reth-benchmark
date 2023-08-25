@@ -14,7 +14,7 @@ This repository contains an equivalent Substreams as the one presented in the Re
 
 1. Using Docker, run `./up.sh -c` which essentially runs `docker-compose up`.
 
-1. Open another terminal, go to this project again and run `substreams-sink-postgres run psql://dev-node:insecure-change-me-in-prod@localhost:5432/dev-node?sslmode=disable mainnet.eth.streamingfast.io:443 "reth-erc20-rocket-v1.0.6.spkg" db_out 11446767:17576926`.
+1. Open another terminal, go to this project again and run `substreams-sink-postgres run "psql://dev-node:insecure-change-me-in-prod@localhost:5432/dev-node?sslmode=disable" mainnet.eth.streamingfast.io:443 "reth-erc20-rocket-v1.0.6.spkg" db_out 11446767:17576926`.
 
 #### Fresh Cache
 
@@ -27,7 +27,7 @@ Check that `substreams info reth-erc20-rocket-v1.0.x.spkg` gives a different has
 Then re-run the command above with the high parallel jobs count set to 150:
 
 ```
-substreams-sink-postgres run -H "X-Sf-Substreams-Parallel-Jobs: 150" psql://dev-node:insecure-change-me-in-prod@localhost:5432/dev-node?sslmode=disable mainnet.eth.streamingfast.io:443 "reth-erc20-rocket-v1.0.x.spkg" db_out 11446767:17576926
+substreams-sink-postgres run -H "X-Sf-Substreams-Parallel-Jobs: 150" "psql://dev-node:insecure-change-me-in-prod@localhost:5432/dev-node?sslmode=disable" mainnet.eth.streamingfast.io:443 "reth-erc20-rocket-v1.0.x.spkg" db_out 11446767:17576926
 ```
 
 > **Note** Don't forget to pick the right `reth-erc20-rocket-v1.0.x.spkg` file!
