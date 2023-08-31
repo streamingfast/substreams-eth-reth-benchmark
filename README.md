@@ -14,7 +14,11 @@ This repository contains an equivalent Substreams as the one presented in the Re
 
 1. Using Docker, run `./up.sh -c` which essentially runs `docker-compose up`.
 
-1. Open another terminal, go to this project again and run `substreams-sink-postgres run "psql://dev-node:insecure-change-me-in-prod@localhost:5432/dev-node?sslmode=disable" mainnet.eth.streamingfast.io:443 "reth-erc20-rocket-v1.0.6.spkg" db_out 11446767:17576926`.
+1. Open another terminal, go to this project again
+
+1. Run `substreams-sink-postgres setup "psql://dev-node:insecure-change-me-in-prod@localhost:5432/dev-node?sslmode=disable" schema.sql` to bootstrap the database with the correct tables.
+
+1. Run `substreams-sink-postgres run "psql://dev-node:insecure-change-me-in-prod@localhost:5432/dev-node?sslmode=disable" mainnet.eth.streamingfast.io:443 "reth-erc20-rocket-v1.0.6.spkg" db_out 11446767:17576926`.
 
 #### Fresh Cache
 
